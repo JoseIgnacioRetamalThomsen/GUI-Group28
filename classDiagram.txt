@@ -1,0 +1,27 @@
+
+*****************
+|item           |
+-----------------
+int stock
+double price
+String description
+
+-----------------
+
+sell
+
+******************
+
+******************
+|User            |
+------------------
+String userName
+String password
+String email
+String address
+int cardNumber
+------------------
+checkPassword
+
+******************
+
