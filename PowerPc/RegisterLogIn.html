@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Register or Log In</title>
+        <meta charset="utf-8">
+        <link href='css/style.css' rel='stylesheet' type='text/css'>
+        <script src="js/data.js"></script>
+    </head>
+	
+    <body>
+        <div id="wrapper">
+
+            <div id="top">
+                <span  id="loginOrLogout"></span> <span id="line">|</span> <span  id="registerOrName"></span> 
+                <!--loggin data-->
+                <script src= "js/RegLogData.js"></script>
+                <!--loggin data-->
+            </div><!--top-->
+
+            <div id="header">
+                    <a href="index.html"><span id="blackP">Power</span><span id="orangeP">PC</span></a>
+            </div><!--header-->
+
+            <div id="menu">
+                <div class="links">
+                    <a href="dellPowerPc.html">Dell</a>
+                </div>
+                <div class="links">
+                    <a href="hpPowerPc.html">HP</a>
+                </div>
+                <div class="links">
+                        <a href="LenovoPowerPC.html">Lenovo</a>
+                </div>
+                <div id="basketCSS" style="float:right">
+                    <a href="basket.html">Basket €</a>
+                    <span id="basketAmount"></span>
+                </div>
+            </div><!--menu-->
+
+            <div id="main">
+
+                <div id="mainTop">
+                    <h2>Register/Login</h2>
+                </div><!--maintTop-->
+
+                <div id="mainBoth">
+                <!-- Register-->
+                    <div id="registerLeft">
+                        <h2>I'm a new customer</h2>
+                        <label id="regFirstNameLabel">First Name <span style="color:red;">*</span></label>
+                        <label id="firstNameAT"></label>
+                        <br>
+                        <input type="text" name="fistName" size="20" maxlength="30" id="regFirstName">
+                        <br>
+                        <label id="regSurnameLabel">Surname <span style="color:red;">*</span></label>
+                        <label id="surenameameAT"></label>
+                        <br>
+                        <input type="text" name="username" size="20" maxlength="30" id="regSurname">
+                        <br>
+                        <label id="regEmailLabel">Email address <span style="color:red;">*</span></label>
+                        <label id="emailAT"></label>
+                        <br>
+                        <input type="text" name="username" size="20" maxlength="30" id="regEmail">
+                        <br>
+                        <label id="regPaswordFirstLabel">Password <span style="color:red;">*</span></label>
+                        <br>
+                        <input type="password" name="username" size="20" maxlength="30" id="regPasswordFirst">
+                        <br>
+                        <label id="passLenghtActionText">Minimum 6 character length</label>
+                        <br>
+                        <label id="regPaswordConfirmLabel">Confirm Password<span style="color:red;">*</span></label>
+                        <br>
+                        <input type="password" name="username" size="20" maxlength="30" id="regPasswordConfirm">
+                        <br>
+                        <label id="passMatchActionText"></label>
+                        <br>
+                        <label id="regPhoneNumberL">Card Number<span style="color:red;">*</span></label>
+
+                        <label id="phoneNumberAT"></label>
+                        <br>
+                        <input type="text" name="username" size="20" maxlength="30" id="regPhoneNumber">
+                        <br>
+                        <button type="button" id="registerButton" >Register</button><br>
+                        <!--Register-->
+                    </div><!--registerLeft-->
+
+                    <div id="loginRight">
+                        <!--LOGIN-->
+                        <h2>Existing Customer</h2>
+                        <label id="logEmailLabel">Email address <span style="color:red;">*</span></label>
+                        <label id="loginEmailAT"></label>
+                        <br>
+                        <input type="text" name="username" size="20" maxlength="30" id="loginEmail">
+                        <br>
+                        <label id="loginPasswordAT"></label>
+                        <label id="loginPaswordFirstLabel">Password <span style="color:red;">*</span></label>
+                        <br>
+                        <input type="password" name="username" size="20" maxlength="30" id="loginPassword">
+                        <br>
+                        <label id="loginPasswordMatchAT">Minimum 6 character length</label>
+                        <br>
+                        <label id="loginFail"></label>
+                        <button type="button" id="loginButton" >Login</button><br>
+                        <!--LOGIN-->
+                    </div><!--loginRight-->
+
+                    <div class="myslides" style="max-width:300px; float:right;padding-right: 60px; ">
+                        <img class="mySlides1" src="images/discount1.jpg" alt="Publicity Image" style="width:100%">
+                        <img class="mySlides1" src="images/discount2.jpg" alt="Publicity Image" style="width:100%">
+                        <img class="mySlides1" src="images/discount3.jpg"  alt="Publicity Image" style="width:100%">
+                    </div>
+                </div><!--maintBoth-->
+
+            </div><!--main-->
+
+            <div id="footer">
+                    <p> Darlene Villancin</p>
+                    <p> Louis Garon</p>
+                    <p> Jose Retamal</p>
+                    <p> Group 28 </p>
+            </div><!--footer-->
+
+        </div><!--wraper-->
+            
+        <script src= "js/basket.js"></script>
+        <script src= "js/RegisterLogIn.js"></script>
+    </body>
+</html>
