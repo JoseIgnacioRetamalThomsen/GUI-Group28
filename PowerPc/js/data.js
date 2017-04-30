@@ -37,10 +37,6 @@ if(localStorage.getItem("isDataLS") === null)
 }
 //main runing code
 
-//basket
-
-
-
 //item object
 function Item(idNum,price, image, stock, title,description2,description3,description4,description5)
 {

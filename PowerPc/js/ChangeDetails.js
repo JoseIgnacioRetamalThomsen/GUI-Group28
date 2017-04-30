@@ -1,36 +1,30 @@
 var regFirstName = document.getElementById("regFirstName");
-regFirstName.addEventListener("blur",checkFirstName);
-
 var regSurname = document.getElementById("regSurname");
-regSurname.addEventListener("blur",checkLastName);
-
 var regEmail = document.getElementById("regEmail");
-regEmail.addEventListener("blur",checkEmail);
-
 var regPasswordFirst = document.getElementById("regPasswordFirst");
-regPasswordFirst.addEventListener("keyup",checkPaswordLength);
-
 var regPasswordConfirm = document.getElementById("regPasswordConfirm");
-regPasswordConfirm.addEventListener("keyup",checkPaswordMatch);
-
 var regPhoneNumber = document.getElementById("regPhoneNumber");
-regPhoneNumber.addEventListener("blur",checkPhoneNumber);//
-
 var go = document.getElementById("registerButton");
-registerButton.addEventListener("click",changeDetails);
-
 var firstNameAT = document.getElementById("firstNameAT");
 var surenameameAT = document.getElementById("surenameameAT");
 var phoneNumberAT = document.getElementById("phoneNumberAT");
-
-
 var emailAT = document.getElementById("emailAT");
-
 var passLenghtActionText = document.getElementById("passLenghtActionText"); 
 var passMatchActionText = document.getElementById("passMatchActionText"); 
-passMatchActionText.innerHTML = "Text here <br>";
+var confirmCB =  document.getElementById("confirmCB");
+//passMatchActionText.innerHTML = "Text here <br>";
+var confirmAT = document.getElementById("confirmAT");
+
+regFirstName.addEventListener("blur",checkFirstName);
+regSurname.addEventListener("blur",checkLastName);
+regEmail.addEventListener("blur",checkEmail);
+regPasswordFirst.addEventListener("keyup",checkPaswordLength);
+regPasswordConfirm.addEventListener("keyup",checkPaswordMatch);
+regPhoneNumber.addEventListener("blur",checkPhoneNumber);
+registerButton.addEventListener("click",changeDetails);
+
 var allCheck = [true,true,true,true,true];
-//--------------------------------------------------------------
+
 //
 //**************posisciion
 var posUserOne = parseInt(SeasonData.pos);
@@ -45,18 +39,17 @@ regPhoneNumber.value = mainUserArray[posUserOne].cardNumber;
 
 function checkFirstName()
 {
-	if(regFirstName.value=="")
-	{
-		firstNameAT.innerHTML = "<br>Please fill this";
-		allCheck[0]=false;
-	}else
-	{
-		firstNameAT.innerHTML = "<br>Good";
-		allCheck[0]=true;
-	}
-	 
-	
+    if(regFirstName.value=="")
+    {
+            firstNameAT.innerHTML = "<br>Please fill this";
+            allCheck[0]=false;
+    }else
+    {
+            firstNameAT.innerHTML = "<br>Good";
+            allCheck[0]=true;
+    }
 }
+
 function checkLastName()
 {
 	if(regSurname.value=="")
@@ -68,8 +61,8 @@ function checkLastName()
 		surenameameAT.innerHTML = "<br>Good";
 		allCheck[1]=true;
 	}
-
 }
+
 function checkEmail()
 {
 	var str = regEmail.value;
@@ -77,14 +70,12 @@ function checkEmail()
 	var check2 = str.endsWith(".com");
 	var check3 = true;
 	var char0 = str.charAt(0);
-	console.log(char0);
+	
 	if(char0=='@')
 	{
 		check3 = false;
 	}
-	console.log(check1);
-	console.log(check2);
-	console.log(check3);
+	
 	if(check1&&check2&&check3)
 	{
 		emailAT.innerHTML ="<br>good";
@@ -95,6 +86,7 @@ function checkEmail()
 		allCheck[2]=false;
 	}
 }
+
 function checkPaswordLength()
 {
 	var str = regPasswordFirst.value;
@@ -103,9 +95,8 @@ function checkPaswordLength()
 	{
 		passLenghtActionText.innerHTML = "good";
 	}
-
-	//console.log("key down pas lenght");
 }
+
 function checkPaswordMatch()
 {
 	var pasOne = regPasswordFirst.value;
@@ -122,6 +113,7 @@ function checkPaswordMatch()
 	}
 	
 }
+
 function checkPhoneNumber()
 {
 	var pN = regPhoneNumber.value;
@@ -135,27 +127,31 @@ function checkPhoneNumber()
 		allCheck[4]=true;
 	}	
 }
+
 function changeDetails()
 {
-	if(allCheck[0]&&allCheck[1]&&allCheck[2]&&allCheck[3]&&allCheck[4])
-	{
-		console.log("register click");
-		
-		loadMainUserArray();
-		console.log(	mainUserArray[posUserOne]);
-		mainUserArray[posUserOne].firstName = regFirstName.value; 
-		mainUserArray[posUserOne].lastName= regSurname.value;
-		mainUserArray[posUserOne].email= regEmail.value;
-		mainUserArray[posUserOne].password= regPasswordConfirm.value;
-		mainUserArray[posUserOne].cardNumber=regPhoneNumber.value;
-		console.log(	mainUserArray[posUserOne]);
-		localStorage.mainArrayLS = JSON.stringify(mainUserArray);
-		updateSeasonData(posUserOne,mainUserArray[posUserOne].firstName);
-		location.replace("index.html");
-		
-	}
+    if(confirmCB.checked== true)
+    {
+        if(allCheck[0]&&allCheck[1]&&allCheck[2]&&allCheck[3]&&allCheck[4])
+        {
+            console.log("register click");
+            loadMainUserArray();
+            console.log(	mainUserArray[posUserOne]);
+            mainUserArray[posUserOne].firstName = regFirstName.value; 
+            mainUserArray[posUserOne].lastName= regSurname.value;
+            mainUserArray[posUserOne].email= regEmail.value;
+            mainUserArray[posUserOne].password= regPasswordConfirm.value;
+            mainUserArray[posUserOne].cardNumber=regPhoneNumber.value;
+            console.log(	mainUserArray[posUserOne]);
+            localStorage.mainArrayLS = JSON.stringify(mainUserArray);
+            updateSeasonData(posUserOne,mainUserArray[posUserOne].firstName);
+            location.replace("index.html");
+        }
+    }else
+    {
+        confirmAT.innerHTML = "<br><span style='color:red'>Please confirm<span><br>";
+    }
 }
-
 
 //edit details*************************************************************************
 

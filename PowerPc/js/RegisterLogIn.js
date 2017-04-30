@@ -57,14 +57,12 @@ function checkEmail()
 	var check2 = str.endsWith(".com");
 	var check3 = true;
 	var char0 = str.charAt(0);
-	console.log(char0);
+	
 	if(char0=='@')
 	{
 		check3 = false;
 	}
-	console.log(check1);
-	console.log(check2);
-	console.log(check3);
+	
 	if(check1&&check2&&check3)
 	{
 		emailAT.innerHTML ="<br><span style='color:green'>Good<span>";
@@ -132,8 +130,6 @@ function register()
 {
     if(allCheck[0]&&allCheck[1]&&allCheck[2]&&allCheck[3]&&allCheck[4])
     {
-            console.log("register click");
-
             loadMainUserArray();
             addNewUser(regFirstName.value,regSurname.value, regEmail.value,regPasswordConfirm .value,regPhoneNumber.value);//*****
             SeasonData.isLogedIn = true;
@@ -171,9 +167,7 @@ function tryLogin()
 {
     var loginEmailStr = loginEmail.value.toLowerCase();
     var loginPasswordStr = loginPassword.value;
-    console.log(loginEmailStr);
-    console.log(loginPasswordStr);
-
+  
     loadMainUserArray();
 
     var pos = -1;
@@ -188,23 +182,20 @@ function tryLogin()
 
     if(found)
     {
-            if(mainUserArray[pos].password == loginPasswordStr )//login
-            {
-                    console.log("susssss1");
-                    SeasonData =  JSON.parse(localStorage.seasonLS);
-                    SeasonData.isLogedIn = true;
-                    alert(mainUserArray[pos].firstName);
-                    SeasonData.userName = mainUserArray[pos].firstName;
-                    SeasonData.pos = pos;
-                    saveMainUserArray();
-                    loginAction();
-                    localStorage.seasonLS = JSON.stringify(SeasonData);
-                    location.replace("index.html");
-
-            }else
-            {
-                loginFail.innerHTML  = "<br><span style='color:red'>Email or password incorrect.<span><br>";
-            }
+        if(mainUserArray[pos].password == loginPasswordStr )//login
+        {
+            SeasonData =  JSON.parse(localStorage.seasonLS);
+            SeasonData.isLogedIn = true;
+            SeasonData.userName = mainUserArray[pos].firstName;
+            SeasonData.pos = pos;
+            saveMainUserArray();
+            loginAction();
+            localStorage.seasonLS = JSON.stringify(SeasonData);
+            location.replace("index.html");
+        }else
+        {
+            loginFail.innerHTML  = "<br><span style='color:red'>Email or password incorrect.<span><br>";
+        }
     }else
     {
         loginFail.innerHTML = "<br><span style='color:red'>Email or password incorrect.<span><br>";
@@ -259,7 +250,6 @@ function checkIfLogin()
 function loginAction()
 {
 	localStorage.isLoggedInLS = "true";
-	
 }
 function readUserOne()
 {
