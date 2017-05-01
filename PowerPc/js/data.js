@@ -4,11 +4,12 @@ var itemArray = new Array();
 
 var mainUserArray = new Array();
 
-var discountArray = ["PC3627458","DL02082013"] 
+var discountArray ;
 var basket = {itemsID : [],items :[0,0,0,0,0,0],itemsPrice: [],total : 0.0};
 //main runing code
 if(localStorage.getItem("isDataLS") === null)
 {
+        discountArray = ["PC3627458","DL02082013","YXZ4253","PCX1232","WXS2065","TRE2345","TSR4556"];
 	isLoggedIn = "false";
 	isData = true;
 	//items
@@ -22,6 +23,7 @@ if(localStorage.getItem("isDataLS") === null)
 	localStorage.seasonLS = JSON.stringify(SeasonData);
 	//baseket
 	localStorage.basketLS = JSON.stringify(basket);
+        localStorage.discountArrayLS = JSON.stringify(discountArray);
 	//output to consle
 	
 }else
@@ -33,6 +35,7 @@ if(localStorage.getItem("isDataLS") === null)
 	mainUserArray = JSON.parse(localStorage.mainArrayLS);
 	itemArray = JSON.parse(localStorage.itemArrayLS);
 	basket = JSON.parse(localStorage.basketLS);
+        discountArray= JSON.parse(localStorage.discountArrayLS);
 	
 }
 //main runing code
@@ -66,12 +69,12 @@ function Item(idNum,price, image, stock, title,description2,description3,descrip
 }
 function loadItems()
 {
-    itemArray[0] = new Item(0,1349.99,"images2/HpOne.jpg",5,"HP Pavilion x360 13-u062sa 13.3 2 in 1","Achieve: Fast computing with the latest tech","Windows 10","Intel Core i5-6200U Processor","RAM: 8 GB / Storage: 128 GB SSD");
-    itemArray[1] = new Item(1,1349.99,"images2/HpTwo.jpg",5,"HP ENVY x360 15-aq055na 15.6 2 in 1 ","Create: Run the most demanding software at its best","Windows 10","Intel Core i7-6560U processor","RAM: 8 GB / Storage: 1 TB HDD & 128 GB SSD");
-    itemArray[2] = new Item(2,1699.99,"images2/LenovoOne.jpg",5,"LENOVO YOGA 910 13.9 4K 2 in 1","Windows 10","Intel Core i5-7200U Processor","RAM: 8 GB / Storage: 256 GB SSD","Laptop and tablet functionality");
-    itemArray[3] = new Item(3,749.99,"images2/LenovoTwo.jpeg",5,"LENOVO YOGA Book 10.1 2 in 1 ","Create: Run the most demanding software at its best","Windows 10","Intel Atom x5-Z8500 Processor","RAM: 4 GB / Storage: 64 GB eMMC");
-    itemArray[4] = new Item(4,1499.00,"images2/DellOne.jpg",5,"DELL XPS 13 Laptop","Create: Run the most demanding software at its best","Windows 10","Intel Core i5-7200U Processor","RAM: 8 GB / Storage: 256 GB SSD");
-    itemArray[5] = new Item(5,1499.00,"images2/DellTwo.jpg",5,"DELL Inspiron 15 7000 15.6 Laptop ","Windows 10","Intel Core i7-7500U Processor","RAM: 16 GB / Storage: 256 GB SSD","Graphics: NVIDIA GeForce 940MX");
+    itemArray[0] = new Item(0,1349.99,"images/HpOne.jpg",5,"HP Pavilion x360 13-u062sa 13.3 2 in 1","Achieve: Fast computing with the latest tech","Windows 10","Intel Core i5-6200U Processor","RAM: 8 GB / Storage: 128 GB SSD");
+    itemArray[1] = new Item(1,1349.99,"images/HpTwo.jpg",5,"HP ENVY x360 15-aq055na 15.6 2 in 1 ","Create: Run the most demanding software at its best","Windows 10","Intel Core i7-6560U processor","RAM: 8 GB / Storage: 1 TB HDD & 128 GB SSD");
+    itemArray[2] = new Item(2,1699.99,"images/LenovoOne.jpg",5,"LENOVO YOGA 910 13.9 4K 2 in 1","Windows 10","Intel Core i5-7200U Processor","RAM: 8 GB / Storage: 256 GB SSD","Laptop and tablet functionality");
+    itemArray[3] = new Item(3,749.99,"images/LenovoTwo.jpeg",5,"LENOVO YOGA Book 10.1 2 in 1 ","Create: Run the most demanding software at its best","Windows 10","Intel Atom x5-Z8500 Processor","RAM: 4 GB / Storage: 64 GB eMMC");
+    itemArray[4] = new Item(4,1499.00,"images/DellOne.jpg",5,"DELL XPS 13 Laptop","Create: Run the most demanding software at its best","Windows 10","Intel Core i5-7200U Processor","RAM: 8 GB / Storage: 256 GB SSD");
+    itemArray[5] = new Item(5,1499.00,"images/DellTwo.jpg",5,"DELL Inspiron 15 7000 15.6 Laptop ","Windows 10","Intel Core i7-7500U Processor","RAM: 16 GB / Storage: 256 GB SSD","Graphics: NVIDIA GeForce 940MX");
     localStorage.itemArrayLS = JSON.stringify(itemArray);
 }
 

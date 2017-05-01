@@ -135,6 +135,8 @@ function register()
             SeasonData.isLogedIn = true;
             SeasonData.userName = regFirstName.value;
             SeasonData.pos = mainUserArray.length -1;
+            if(SeasonData.pos <5)
+            alert("thanks for register register \n you have win a 10% of discount \n ples use this code : "+ discountArray[SeasonData.pos] );
             saveMainUserArray();
             loginAction();
             location.replace("index.html");

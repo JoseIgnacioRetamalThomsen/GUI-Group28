@@ -82,51 +82,55 @@ body
 #main
 {
 	width :100%;
-	height :1200px;
+	height :100%px;
 	float :left;
 	margin :0 0 0 0;
 	padding :0 0 0 0;
-	
+	min-height: 850px;
 	background-color :#ffffff;
 	text-align: left;
 }
 #mainTop
 {
-	padding :20px 20px 0px 20px;
+    padding :20px 20px 0px 20px;
 }
 #registerLeft
 {
-	float :left;
-	padding :20px 20px 20px 20px;
+    float :left;
+    padding :20px 20px 20px 20px;
 }
 #loginRight
 {
-	float:left;
-	padding :20px 20px 20px 20px;
+    float:left;
+    padding :20px 20px 20px 20px;
 }
 #topLink, #topLinkLogout
 {
-	color: white;
+    color: white;
 }
- a:link {
+ a:link 
+ {
   text-decoration: none;
   color: #000000;
 }
  
- a:visited {
-	text-decoration: none;
+ a:visited 
+ {
+    text-decoration: none;
     color: #000000;
     background-color: transparent;
 }
  
-a:hover {
-	text-decoration: none;
+a:hover 
+{
+    text-decoration: none;
     color: #ffcc00;
     background-color: transparent;
-	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
- a:active {
+ a:active 
+ {
     color: #000066;
     background-color: #cc9900;
     text-decoration: none;
@@ -143,11 +147,15 @@ a:hover {
 }
 #footer p 
 {
-	margin :0 0 0 0;
-	padding :5px 30px 5px 0px;
+    margin :0 0 0 0;
+    padding :5px 30px 5px 0px;
 
 }
 #changeDetailsDiv
 {
     padding : 0px 30px;
+}
+#slideShowIndex
+{
+  
 }

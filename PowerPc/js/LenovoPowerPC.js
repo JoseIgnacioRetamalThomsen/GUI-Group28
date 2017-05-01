@@ -21,7 +21,7 @@ function showItem(container,item)
 							 
 	 
 
-	document.getElementById( "w"+item.idNum ).addEventListener("click",function(){addToBasket(basket,item.idNum,item.price);console.log("working"+item.idNum)});
+	document.getElementById( "w"+item.idNum ).addEventListener("click",function(){addToBasket(basket,item.idNum,item.price);});
 }
 
 function addToBasket(basket,id,price)
